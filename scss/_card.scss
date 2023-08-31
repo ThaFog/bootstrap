@@ -18,6 +18,8 @@
   --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
   --#{$prefix}card-cap-bg: #{$card-cap-bg};
   --#{$prefix}card-cap-color: #{$card-cap-color};
+  --#{$prefix}card-cap-border-color: #{$card-cap-border-color};
+  --#{$prefix}card-cap-tab-active: #{$card-cap-tab-active};
   --#{$prefix}card-height: #{$card-height};
   --#{$prefix}card-color: #{$card-color};
   --#{$prefix}card-bg: #{$card-bg};
@@ -108,7 +110,7 @@
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   color: var(--#{$prefix}card-cap-color);
   background-color: var(--#{$prefix}card-cap-bg);
-  border-bottom: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+  border-bottom: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-cap-border-color);
 
   &:first-child {
     @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
@@ -119,13 +121,12 @@
   padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
   color: var(--#{$prefix}card-cap-color);
   background-color: var(--#{$prefix}card-cap-bg);
-  border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+  border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-cap-border-color);
 
   &:last-child {
     @include border-radius(0 0 var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius));
   }
 }
-
 
 //
 // Header navs
@@ -139,6 +140,7 @@
 
   .nav-link.active {
     background-color: var(--#{$prefix}card-bg);
+    border-color: var(--#{$prefix}card-cap-tab-active);
     border-bottom-color: var(--#{$prefix}card-bg);
   }
 }
@@ -234,6 +236,17 @@
           }
         }
       }
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .card {
+      --#{$prefix}card-border-color: #{$card-border-color-dark};
+      --#{$prefix}card-cap-bg: #{$card-cap-bg-dark};
+      --#{$prefix}card-bg: #{$card-bg-dark};
+      --#{$prefix}card-cap-border-color: #{$card-cap-border-color};
     }
   }
 }

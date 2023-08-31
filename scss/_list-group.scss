@@ -21,6 +21,7 @@
   --#{$prefix}list-group-active-color: #{$list-group-active-color};
   --#{$prefix}list-group-active-bg: #{$list-group-active-bg};
   --#{$prefix}list-group-active-border-color: #{$list-group-active-border-color};
+  --#{$prefix}list-group-item-separator-border-color: #{$list-group-item-separator-border-color};
   // scss-docs-end list-group-css-vars
 
   display: flex;
@@ -87,6 +88,10 @@
 
   &:last-child {
     @include border-bottom-radius(inherit);
+  }
+
+  &:not(:last-child) {
+    border-bottom: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-item-separator-border-color);
   }
 
   &.disabled,

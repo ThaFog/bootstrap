@@ -14,6 +14,7 @@
   @include rfs($popover-header-font-size, --#{$prefix}popover-header-font-size);
   --#{$prefix}popover-header-color: #{$popover-header-color};
   --#{$prefix}popover-header-bg: #{$popover-header-bg};
+  --#{$prefix}popover-header-border-color: #{$popover-header-border-color};
   --#{$prefix}popover-body-padding-x: #{$popover-body-padding-x};
   --#{$prefix}popover-body-padding-y: #{$popover-body-padding-y};
   --#{$prefix}popover-body-color: #{$popover-body-color};
@@ -182,7 +183,7 @@
   @include font-size(var(--#{$prefix}popover-header-font-size));
   color: var(--#{$prefix}popover-header-color);
   background-color: var(--#{$prefix}popover-header-bg);
-  border-bottom: var(--#{$prefix}popover-border-width) solid var(--#{$prefix}popover-border-color);
+  border-bottom: var(--#{$prefix}popover-border-width) solid var(--#{$prefix}popover-header-border-color);
   @include border-top-radius(var(--#{$prefix}popover-inner-border-radius));
 
   &:empty {

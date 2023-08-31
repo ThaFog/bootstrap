@@ -39,6 +39,8 @@
 @mixin button-outline-variant(
   $color,
   $color-hover: color-contrast($color),
+  $hover-background: $color,
+  $hover-border: $color,
   $active-background: $color,
   $active-border: $color,
   $active-color: color-contrast($active-background)
@@ -46,8 +48,8 @@
   --#{$prefix}btn-color: #{$color};
   --#{$prefix}btn-border-color: #{$color};
   --#{$prefix}btn-hover-color: #{$color-hover};
-  --#{$prefix}btn-hover-bg: #{$active-background};
-  --#{$prefix}btn-hover-border-color: #{$active-border};
+  --#{$prefix}btn-hover-bg: #{$hover-background};
+  --#{$prefix}btn-hover-border-color: #{$hover-border};
   --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
   --#{$prefix}btn-active-color: #{$active-color};
   --#{$prefix}btn-active-bg: #{$active-background};

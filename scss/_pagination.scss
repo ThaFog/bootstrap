@@ -8,6 +8,7 @@
   --#{$prefix}pagination-border-width: #{$pagination-border-width};
   --#{$prefix}pagination-border-color: #{$pagination-border-color};
   --#{$prefix}pagination-border-radius: #{$pagination-border-radius};
+  --#{$prefix}pagination-separator-border-color: #{$pagination-separator-border-color};
   --#{$prefix}pagination-hover-color: #{$pagination-hover-color};
   --#{$prefix}pagination-hover-bg: #{$pagination-hover-bg};
   --#{$prefix}pagination-hover-border-color: #{$pagination-hover-border-color};
@@ -73,6 +74,7 @@
 .page-item {
   &:not(:first-child) .page-link {
     margin-left: $pagination-margin-start;
+    border-left-color: var(--#{$prefix}pagination-separator-border-color);
   }
 
   @if $pagination-margin-start == calc(#{$pagination-border-width} * -1) {
