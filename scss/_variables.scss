@@ -442,10 +442,10 @@ $body-text-align:           null !default;
 $body-color:                $gray-900 !default;
 $body-bg:                   $gray-50 !default;
 
-$body-secondary-color:      rgba($body-color, .75) !default;
+$body-secondary-color:      tint-color($body-color, 40%) !default;
 $body-secondary-bg:         $gray-300 !default;
 
-$body-tertiary-color:       rgba($body-color, .5) !default;
+$body-tertiary-color:       tint-color($body-color, 60%) !default;
 $body-tertiary-bg:          $gray-200 !default;
 
 $body-emphasis-color:       $black !default;
@@ -900,12 +900,12 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              var(--#{$prefix}body-bg) !default;
-$input-disabled-color:                  null !default;
-$input-disabled-bg:                     var(--#{$prefix}secondary-bg) !default;
-$input-disabled-border-color:           null !default;
+$input-bg:                              var(--#{$prefix}-body-bg) !default;
+$input-disabled-color:                  var(--#{$prefix}secondary-color) !default;
+$input-disabled-bg:                     shade-color($body-bg, 5%) !default;
+$input-disabled-border-color:           tint-color($border-color, 40%) !default;
 
-$input-color:                           var(--#{$prefix}body-color) !default;
+$input-color:                           tint-color($body-color, 20%) !default;
 $input-border-color:                    var(--#{$prefix}border-color) !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
@@ -914,9 +914,9 @@ $input-border-radius:                   var(--#{$prefix}border-radius) !default;
 $input-border-radius-sm:                var(--#{$prefix}border-radius-sm) !default;
 $input-border-radius-lg:                var(--#{$prefix}border-radius-lg) !default;
 
-$input-focus-bg:                        $input-bg !default;
-$input-focus-border-color:              tint-color($component-active-bg, 50%) !default;
-$input-focus-color:                     $input-color !default;
+$input-focus-bg:                        tint-color($body-bg, 30%) !default;
+$input-focus-border-color:              $input-border-color !default;
+$input-focus-color:                     $body-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
@@ -933,7 +933,7 @@ $input-height:                          add($input-line-height * 1em, add($input
 $input-height-sm:                       add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
 $input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false)) !default;
 
-$input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out, background-color .15s ease-in-out, color .15s ease-in-out !default;
 
 $form-color-width:                      3rem !default;
 // scss-docs-end form-input-variables
@@ -980,7 +980,7 @@ $form-switch-width:               2em !default;
 $form-switch-padding-start:       $form-switch-width + .5em !default;
 $form-switch-bg-image:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>") !default;
 $form-switch-border-radius:       $form-switch-width !default;
-$form-switch-transition:          background-position .15s ease-in-out !default;
+$form-switch-transition:          background-position .15s ease-in-out, background-color .15s ease-in-out !default;
 
 $form-switch-focus-color:         $input-focus-border-color !default;
 $form-switch-focus-bg-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-focus-color}'/></svg>") !default;
@@ -995,7 +995,7 @@ $input-group-addon-padding-y:           $input-padding-y !default;
 $input-group-addon-padding-x:           $input-padding-x !default;
 $input-group-addon-font-weight:         $input-font-weight !default;
 $input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  var(--#{$prefix}tertiary-bg) !default;
+$input-group-addon-bg:                  $gray-100 !default;
 $input-group-addon-border-color:        $input-border-color !default;
 // scss-docs-end input-group-variables
 
@@ -1009,7 +1009,7 @@ $form-select-font-weight:           $input-font-weight !default;
 $form-select-line-height:           $input-line-height !default;
 $form-select-color:                 $input-color !default;
 $form-select-bg:                    $input-bg !default;
-$form-select-disabled-color:        null !default;
+$form-select-disabled-color:        var(--#{$prefix}secondary-color) !default;
 $form-select-disabled-bg:           $input-disabled-bg !default;
 $form-select-disabled-border-color: $input-disabled-border-color !default;
 $form-select-bg-position:           right $form-select-padding-x center !default;
@@ -1028,7 +1028,7 @@ $form-select-box-shadow:          $box-shadow-inset !default;
 
 $form-select-focus-border-color:  $input-focus-border-color !default;
 $form-select-focus-width:         $input-focus-width !default;
-$form-select-focus-box-shadow:    0 0 0 $form-select-focus-width $input-btn-focus-color !default;
+$form-select-focus-box-shadow:    none !default;
 
 $form-select-padding-y-sm:        $input-padding-y-sm !default;
 $form-select-padding-x-sm:        $input-padding-x-sm !default;
@@ -1065,9 +1065,9 @@ $form-range-thumb-transition:              background-color .15s ease-in-out, bo
 // scss-docs-end form-range-variables
 
 // scss-docs-start form-file-variables
-$form-file-button-color:          $input-color !default;
-$form-file-button-bg:             var(--#{$prefix}tertiary-bg) !default;
-$form-file-button-hover-bg:       var(--#{$prefix}secondary-bg) !default;
+$form-file-button-bg:             $secondary !default;
+$form-file-button-hover-bg:       tint-color($form-file-button-bg, 10%) !default;
+$form-file-button-color:          color-contrast($form-file-button-bg) !default;
 // scss-docs-end form-file-variables
 
 // scss-docs-start form-floating-variables
