@@ -153,3 +153,21 @@
   padding: var(--#{$prefix}offcanvas-padding-y) var(--#{$prefix}offcanvas-padding-x);
   overflow-y: auto;
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $next: breakpoint-next($breakpoint, $grid-breakpoints);
+      $infix: breakpoint-infix($next, $grid-breakpoints);
+
+      .offcanvas#{$infix} {
+        --#{$prefix}offcanvas-bg: #{$offcanvas-bg-color-dark};
+        --#{$prefix}offcanvas-border-color: #{$offcanvas-border-color-dark};
+      }
+    }
+
+    .offcanvas-backdrop {
+      --#{$prefix}backdrop-bg: #{$offcanvas-backdrop-bg-dark};
+    }
+  }
+}

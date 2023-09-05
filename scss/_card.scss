@@ -46,8 +46,6 @@
   }
 
   > .list-group {
-    border-top: inherit;
-    border-bottom: inherit;
 
     &:first-child {
       border-top-width: 0;
@@ -62,8 +60,7 @@
 
   // Due to specificity of the above selector (`.card > .list-group`), we must
   // use a child selector here to prevent double borders.
-  > .card-header + .list-group,
-  > .list-group + .card-footer {
+  > .card-header + .list-group {
     border-top: 0;
   }
 }
@@ -246,7 +243,8 @@
       --#{$prefix}card-border-color: #{$card-border-color-dark};
       --#{$prefix}card-cap-bg: #{$card-cap-bg-dark};
       --#{$prefix}card-bg: #{$card-bg-dark};
-      --#{$prefix}card-cap-border-color: #{$card-cap-border-color};
+      --#{$prefix}card-cap-border-color: #{$card-cap-border-color-dark};
+      --#{$prefix}card-cap-tab-active: #{$card-cap-tab-active-dark};
     }
   }
 }

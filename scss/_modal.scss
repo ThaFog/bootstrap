@@ -243,3 +243,20 @@
   }
 }
 // scss-docs-end modal-fullscreen-loop
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .modal {
+      --#{$prefix}modal-bg: #{$modal-bg-dark};
+      --#{$prefix}modal-border-color: #{$modal-content-border-color-dark};
+      --#{$prefix}modal-header-bg: #{$modal-header-bg-dark};
+      --#{$prefix}modal-header-border-color: #{$modal-header-border-color-dark};
+      --#{$prefix}modal-footer-bg: #{$modal-footer-bg-dark};
+      --#{$prefix}modal-footer-border-color: #{$modal-footer-border-color-dark};
+    }
+
+    .modal-backdrop {
+      --#{$prefix}backdrop-bg: #{$modal-backdrop-bg-dark};
+    }
+  }
+}

@@ -156,8 +156,6 @@
 @if $enable-dark-mode {
   @include color-mode(dark) {
     .accordion {
-      --#{$prefix}accordion-bg: #{$accordion-bg-dark};
-      --#{$prefix}accordion-border-color: #{$accordion-border-color-dark};
       --#{$prefix}accordion-item-separator-border-color: #{$accordion-item-separator-border-color-dark};
     }
 

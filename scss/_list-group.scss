@@ -142,6 +142,11 @@
           @include border-bottom-start-radius(0);
         }
 
+        &:not(:last-child) {
+          border-bottom: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-border-color);
+          border-right: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-item-separator-border-color);
+        }
+
         &.active {
           margin-top: 0;
         }
@@ -200,3 +205,11 @@
   }
 }
 // scss-docs-end list-group-modifiers
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .list-group {
+      --#{$prefix}list-group-item-separator-border-color: #{$list-group-item-separator-border-color-dark};
+    }
+  }
+}

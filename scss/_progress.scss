@@ -66,3 +66,11 @@
     }
   }
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .progress {
+      --#{$prefix}progress-bg: #{$progress-bg-dark};
+    }
+  }
+}

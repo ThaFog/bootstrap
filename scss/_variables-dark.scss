@@ -8,51 +8,53 @@
 
 // scss-docs-start sass-dark-mode-vars
 // scss-docs-start theme-text-dark-variables
-$primary-text-emphasis-dark:        tint-color($primary, 40%) !default;
-$secondary-text-emphasis-dark:      tint-color($secondary, 40%) !default;
-$success-text-emphasis-dark:        tint-color($success, 40%) !default;
-$info-text-emphasis-dark:           tint-color($info, 40%) !default;
-$warning-text-emphasis-dark:        tint-color($warning, 40%) !default;
-$danger-text-emphasis-dark:         tint-color($danger, 40%) !default;
+$primary-text-emphasis-dark:        tint-color($primary, 70%) !default;
+$secondary-text-emphasis-dark:      tint-color($secondary, 70%) !default;
+$success-text-emphasis-dark:        tint-color($success, 70%) !default;
+$info-text-emphasis-dark:           tint-color($info, 70%) !default;
+$warning-text-emphasis-dark:        tint-color($warning, 70%) !default;
+$danger-text-emphasis-dark:         tint-color($danger, 70%) !default;
 $light-text-emphasis-dark:          $gray-100 !default;
 $dark-text-emphasis-dark:           $gray-300 !default;
 // scss-docs-end theme-text-dark-variables
 
 // scss-docs-start theme-bg-subtle-dark-variables
-$primary-bg-subtle-dark:            shade-color($primary, 80%) !default;
-$secondary-bg-subtle-dark:          shade-color($secondary, 80%) !default;
-$success-bg-subtle-dark:            shade-color($success, 80%) !default;
-$info-bg-subtle-dark:               shade-color($info, 80%) !default;
-$warning-bg-subtle-dark:            shade-color($warning, 80%) !default;
-$danger-bg-subtle-dark:             shade-color($danger, 80%) !default;
-$light-bg-subtle-dark:              $gray-800 !default;
-$dark-bg-subtle-dark:               mix($gray-800, $black) !default;
+$primary-bg-subtle-dark:            shade-color($primary, 30%) !default;
+$secondary-bg-subtle-dark:          shade-color($secondary, 30%) !default;
+$success-bg-subtle-dark:            shade-color($success, 30%) !default;
+$info-bg-subtle-dark:               shade-color($info, 30%) !default;
+$warning-bg-subtle-dark:            shade-color($warning, 30%) !default;
+$danger-bg-subtle-dark:             shade-color($danger, 30%) !default;
+$light-bg-subtle-dark:              $gray-600 !default;
+$dark-bg-subtle-dark:               mix($gray-600, $black) !default;
 // scss-docs-end theme-bg-subtle-dark-variables
 
 // scss-docs-start theme-border-subtle-dark-variables
 $primary-border-subtle-dark:        shade-color($primary, 40%) !default;
 $secondary-border-subtle-dark:      shade-color($secondary, 40%) !default;
 $success-border-subtle-dark:        shade-color($success, 40%) !default;
-$info-border-subtle-dark:           shade-color($info, 40%) !default;
-$warning-border-subtle-dark:        shade-color($warning, 40%) !default;
+$info-border-subtle-dark:           shade-color($info, 60%) !default;
+$warning-border-subtle-dark:        shade-color($warning, 60%) !default;
 $danger-border-subtle-dark:         shade-color($danger, 40%) !default;
 $light-border-subtle-dark:          $gray-700 !default;
 $dark-border-subtle-dark:           $gray-800 !default;
 // scss-docs-end theme-border-subtle-dark-variables
 
-$body-color-dark:                   $gray-300 !default;
-$body-bg-dark:                      $gray-900 !default;
+$body-color-dark:                   $gray-100 !default;
+$body-bg-dark:                      $gray-1000 !default;
 $body-secondary-color-dark:         rgba($body-color-dark, .75) !default;
 $body-secondary-bg-dark:            $gray-800 !default;
 $body-tertiary-color-dark:          rgba($body-color-dark, .5) !default;
 $body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%) !default;
 $body-emphasis-color-dark:          $white !default;
-$border-color-dark:                 $gray-700 !default;
-$border-color-translucent-dark:     rgba($white, .15) !default;
+$border-color-dark:                 $gray-600 !default;
+$border-color-translucent-dark:     rgba($gray-100, .15) !default;
 $headings-color-dark:               inherit !default;
 $link-color-dark:                   tint-color($primary, 40%) !default;
 $link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage) !default;
 $code-color-dark:                   tint-color($code-color, 40%) !default;
+
+$component-bg-dark:                 $gray-700 !default;
 
 
 //
@@ -77,9 +79,82 @@ $form-invalid-border-color-dark:    $red-300 !default;
 // Accordion
 //
 
-$accordion-icon-color-dark:         $primary-text-emphasis-dark !default;
-$accordion-icon-active-color-dark:  $primary-text-emphasis-dark !default;
+$accordion-item-separator-border-color-dark:  $gray-900 !default;
 
-$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
-$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-icon-color-dark:                   $primary-text-emphasis-dark !default;
+$accordion-icon-active-color-dark:            $primary-text-emphasis-dark !default;
+
+$accordion-button-icon-dark:                  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-button-active-icon-dark:           url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
 // scss-docs-end sass-dark-mode-vars
+
+//
+// Card
+//
+
+$card-bg-dark:                      var(--#{$prefix}component-bg) !default;
+$card-border-color-dark:            var(--#{$prefix}border-color) !default;
+$card-cap-bg-dark:                  rgba(0 0 0 / .09) !default;
+$card-cap-border-color-dark:        rgba(0 0 0 / .12) !default;
+$card-cap-tab-active-dark:          rgba(0, 0, 0, .2) !default;
+
+//
+// List group
+//
+
+$list-group-item-separator-border-color-dark:  $gray-900 !default;
+
+//
+// Modal
+//
+
+$modal-bg-dark:                          var(--#{$prefix}component-bg);
+$modal-content-border-color-dark:        var(--#{$prefix}border-color) !default;
+$modal-backdrop-bg-dark:                 rgba($black, .5) !default;
+
+$modal-header-bg-dark:                   rgba(0 0 0 / .09) !default;
+$modal-header-border-color-dark:         rgba(0 0 0 / .12) !default;
+
+$modal-footer-bg-dark:                   rgba(0 0 0 / .09) !default;
+$modal-footer-border-color-dark:         $modal-header-border-color-dark !default;
+
+//
+// Offcanvas
+//
+
+$offcanvas-border-color-dark:            $modal-content-border-color-dark !default;
+$offcanvas-bg-color-dark:                $modal-bg-dark !default;
+$offcanvas-backdrop-bg-dark:             $modal-backdrop-bg-dark !default;
+
+//
+// Pagination
+//
+
+$pagination-separator-border-color-dark: $gray-900 !default;
+
+$pagination-disabled-color-dark:         $gray-600 !default;
+$pagination-disabled-bg-dark:            shade-color($component-bg-dark, 15%) !default;
+$pagination-disabled-border-color-dark:  var(--#{$prefix}border-color) !default;
+
+//
+// Popover
+//
+
+$popover-header-bg-dark:                 rgba(0 0 0 / .09) !default;
+$popover-header-border-color-dark:       rgba(0 0 0 / .12) !default;
+
+//
+// Progress
+//
+
+$progress-bg-dark:                       $gray-900 !default;
+
+//
+// Toast
+//
+
+$toast-background-color-dark:            rgba($component-bg-dark, .85) !default;
+$toast-border-color-dark:                rgba($border-color-dark, .85) !default;
+$toast-header-color-dark:                var(--#{$prefix}secondary-color) !default;
+$toast-header-background-color-dark:     rgba(0 0 0 / .09) !default;
+$toast-header-border-color-dark:         rgba(0 0 0 / .12) !default;

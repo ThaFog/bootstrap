@@ -195,3 +195,12 @@
   padding: var(--#{$prefix}popover-body-padding-y) var(--#{$prefix}popover-body-padding-x);
   color: var(--#{$prefix}popover-body-color);
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .popover {
+      --#{$prefix}popover-header-bg: #{$popover-header-bg-dark};
+      --#{$prefix}popover-header-border-color: #{$popover-header-border-color-dark};
+    }
+  }
+}
