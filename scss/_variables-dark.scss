@@ -70,8 +70,8 @@ $form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://w
 // scss-docs-start form-validation-colors-dark
 $form-valid-color-dark:             $green-300 !default;
 $form-valid-border-color-dark:      $green-300 !default;
-$form-invalid-color-dark:           $red-300 !default;
-$form-invalid-border-color-dark:    $red-300 !default;
+$form-invalid-color-dark:           $red-400 !default;
+$form-invalid-border-color-dark:    $red-400 !default;
 // scss-docs-end form-validation-colors-dark
 
 
@@ -158,3 +158,63 @@ $toast-border-color-dark:                rgba($border-color-dark, .85) !default;
 $toast-header-color-dark:                var(--#{$prefix}secondary-color) !default;
 $toast-header-background-color-dark:     rgba(0 0 0 / .09) !default;
 $toast-header-border-color-dark:         rgba(0 0 0 / .12) !default;
+
+//
+// Inputs
+//
+
+$input-bg-dark:                              $gray-900 !default;
+$input-color-dark:                           $gray-200 !default;
+$input-border-color-dark:                    shade-color($gray-900, 10%) !default;
+
+$input-disabled-color-dark:                  $gray-500 !default;
+$input-disabled-bg-dark:                     shade-color($gray-900, 15%) !default;
+$input-disabled-border-color-dark:           $gray-900 !default;
+$input-disabled-opacity-dark:                .75 !default;
+
+$input-focus-bg-dark:                        tint-color($gray-900, 5%) !default;
+$input-focus-border-color-dark:              $input-border-color-dark !default;
+$input-focus-color-dark:                     $white !default;
+
+$input-placeholder-color-dark:               $gray-400 !default;
+
+//
+// Select
+//
+
+$form-select-bg-dark:                     $input-bg-dark !default;
+$form-select-color-dark:                  $input-color-dark !default;
+$form-select-border-color-dark:           $input-border-color-dark !default;
+
+$form-select-disabled-bg-dark:            $input-disabled-bg-dark !default;
+$form-select-disabled-color-dark:         $input-disabled-color-dark !default;
+$form-select-disabled-border-color-dark:  $input-disabled-border-color-dark !default;
+$form-select-disabled-opacity-dark:       $input-disabled-opacity-dark !default;
+
+
+$form-select-focus-bg-dark:               $input-focus-bg-dark !default;
+$form-select-focus-color-dark:            $input-focus-color-dark !default;
+$form-select-focus-border-color-dark:     $input-focus-border-color-dark !default;
+
+//
+// Check
+//
+
+$form-check-input-bg-dark:                     $input-bg-dark !default;
+$form-check-input-border-dark:                 var(--#{$prefix}border-width) solid $input-border-color-dark !default;
+
+$form-check-input-focus-border-dark:           $input-focus-border-color-dark !default;
+
+//
+// Input group addon
+//
+
+$input-group-addon-bg-dark:                  $gray-600 !default;
+$input-group-addon-color-dark:               $input-color-dark !default;
+$input-group-addon-border-color-dark:        $input-border-color-dark !default;
+
+//
+// Floating label
+//
+
+$form-floating-label-disabled-color-dark:    $gray-500 !default;
