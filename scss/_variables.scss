@@ -575,7 +575,7 @@ $focus-ring-width:      .25rem !default;
 $focus-ring-opacity:    .25 !default;
 $focus-ring-color:      rgba($primary, $focus-ring-opacity) !default;
 $focus-ring-blur:       0 !default;
-$focus-ring-box-shadow: none !default;
+$focus-ring-box-shadow: null !default;
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
@@ -900,7 +900,7 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              var(--#{$prefix}-body-bg) !default;
+$input-bg:                              var(--#{$prefix}body-bg) !default;
 $input-disabled-color:                  var(--#{$prefix}secondary-color) !default;
 $input-disabled-bg:                     shade-color($body-bg, 5%) !default;
 $input-disabled-border-color:           tint-color($border-color, 40%) !default;
