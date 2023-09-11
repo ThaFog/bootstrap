@@ -37,4 +37,4 @@ I also changed default package manager to pnpm hence pnpm-lock.yaml instead.
 
 ## Documentation
 
-You can find documentation here:
+You can find documentation here: https://bootstrap.lukester.app/
