@@ -63,6 +63,8 @@
   --#{$prefix}body-bg: #{$body-bg};
   --#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
 
+  --#{$prefix}component-bg: #{$component-bg};
+
   --#{$prefix}emphasis-color: #{$body-emphasis-color};
   --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color)};
 
@@ -137,6 +139,8 @@
     --#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
     --#{$prefix}body-bg: #{$body-bg-dark};
     --#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+
+    --#{$prefix}component-bg: #{$component-bg-dark};
 
     --#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
     --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};

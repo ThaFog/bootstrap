@@ -181,6 +181,14 @@ The striped gradient can also be animated. Add `.progress-bar-animated` to `.pro
 </div>
 {{< /example >}}
 
+## Animated glow
+
+{{< example >}}
+<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-glow progress-bar-animated" style="width: 75%"></div>
+</div>
+{{< /example >}}
+
 ## CSS
 
 ### Variables

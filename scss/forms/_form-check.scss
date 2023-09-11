@@ -28,6 +28,8 @@
 
 .form-check-input {
   --#{$prefix}form-check-bg: #{$form-check-input-bg};
+  --#{$prefix}form-check-border: #{$form-check-input-border};
+  --#{$prefix}form-check-focus-border: #{$form-check-input-focus-border};
 
   width: $form-check-input-width;
   height: $form-check-input-width;
@@ -39,7 +41,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: $form-check-input-border;
+  border: var(--#{$prefix}form-check-border);
   print-color-adjust: exact; // Keep themed appearance for print
   @include transition($form-check-transition);
 
@@ -57,7 +59,7 @@
   }
 
   &:focus {
-    border-color: $form-check-input-focus-border;
+    border-color: var(--#{$prefix}form-check-focus-border);
     outline: 0;
     box-shadow: $form-check-input-focus-box-shadow;
   }
@@ -181,6 +183,12 @@
 
 @if $enable-dark-mode {
   @include color-mode(dark) {
+    .form-check-input {
+      --#{$prefix}form-check-bg: #{$form-check-input-bg-dark};
+      --#{$prefix}form-check-border: #{$form-check-input-border-dark};
+      --#{$prefix}form-check-focus-border: #{$form-check-input-focus-border-dark};
+    }
+
     .form-switch .form-check-input:not(:checked):not(:focus) {
       --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image-dark)};
     }

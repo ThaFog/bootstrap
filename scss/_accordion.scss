@@ -26,6 +26,7 @@
   --#{$prefix}accordion-body-padding-y: #{$accordion-body-padding-y};
   --#{$prefix}accordion-active-color: #{$accordion-button-active-color};
   --#{$prefix}accordion-active-bg: #{$accordion-button-active-bg};
+  --#{$prefix}accordion-item-separator-border-color: #{$accordion-item-separator-border-color};
   // scss-docs-end accordion-css-vars
 }
 
@@ -115,6 +116,10 @@
       @include border-bottom-radius(var(--#{$prefix}accordion-border-radius));
     }
   }
+
+  &:not(:last-of-type) {
+    border-bottom-color: var(--#{$prefix}accordion-item-separator-border-color);
+  }
 }
 
 .accordion-body {
@@ -150,6 +155,10 @@
 
 @if $enable-dark-mode {
   @include color-mode(dark) {
+    .accordion {
+      --#{$prefix}accordion-item-separator-border-color: #{$accordion-item-separator-border-color-dark};
+    }
+
     .accordion-button::after {
       --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-button-icon-dark)};
       --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-button-active-icon-dark)};

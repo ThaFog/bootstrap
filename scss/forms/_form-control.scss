@@ -3,6 +3,19 @@
 //
 
 .form-control {
+  --#{$prefix}form-control-bg: #{$input-bg};
+  --#{$prefix}form-control-color: #{$input-color};
+  --#{$prefix}form-control-border-color: #{$input-border-color};
+  --#{$prefix}form-control-disabled-bg: #{$input-disabled-bg};
+  --#{$prefix}form-control-disabled-color: #{$input-disabled-color};
+  --#{$prefix}form-control-disabled-border-color: #{$input-disabled-border-color};
+  --#{$prefix}form-control-disabled-opacity: #{$input-disabled-opacity};
+  --#{$prefix}form-control-focus-bg: #{$input-focus-bg};
+  --#{$prefix}form-control-focus-color: #{$input-focus-color};
+  --#{$prefix}form-control-focus-border-color: #{$input-focus-border-color};
+  --#{$prefix}form-control-placeholder-color: #{$input-placeholder-color};
+
+
   display: block;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
@@ -10,11 +23,11 @@
   @include font-size($input-font-size);
   font-weight: $input-font-weight;
   line-height: $input-line-height;
-  color: $input-color;
+  color: var(--#{$prefix}form-control-color);
   appearance: none; // Fix appearance for date inputs in Safari
-  background-color: $input-bg;
+  background-color: var(--#{$prefix}form-control-bg);
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  border: $input-border-width solid var(--#{$prefix}form-control-border-color);
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @include border-radius($input-border-radius, 0);
@@ -32,9 +45,9 @@
 
   // Customize the `:focus` state to imitate native WebKit styles.
   &:focus {
-    color: $input-focus-color;
-    background-color: $input-focus-bg;
-    border-color: $input-focus-border-color;
+    color: var(--#{$prefix}form-control-focus-color);
+    background-color: var(--#{$prefix}form-control-focus-bg);
+    border-color: var(--#{$prefix}form-control-focus-border-color);
     outline: 0;
     @if $enable-shadows {
       @include box-shadow($input-box-shadow, $input-focus-box-shadow);
@@ -73,7 +86,7 @@
 
   // Placeholder
   &::placeholder {
-    color: $input-placeholder-color;
+    color: var(--#{$prefix}form-control-placeholder-color);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
@@ -84,11 +97,11 @@
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled {
-    color: $input-disabled-color;
-    background-color: $input-disabled-bg;
-    border-color: $input-disabled-border-color;
+    color: var(--#{$prefix}form-control-disabled-color);
+    background-color: var(--#{$prefix}form-control-disabled-bg);
+    border-color: var(--#{$prefix}form-control-disabled-border-color);
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-    opacity: 1;
+    opacity: var(--#{$prefix}form-control-disabled-opacity);
   }
 
   // File input buttons theming
@@ -212,3 +225,22 @@ textarea {
   &.form-control-sm { height: $input-height-sm; }
   &.form-control-lg { height: $input-height-lg; }
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .form-control {
+      --#{$prefix}form-control-bg: #{$input-bg-dark};
+      --#{$prefix}form-control-color: #{$input-color-dark};
+      --#{$prefix}form-control-border-color: #{$input-border-color-dark};
+      --#{$prefix}form-control-disabled-bg: #{$input-disabled-bg-dark};
+      --#{$prefix}form-control-disabled-color: #{$input-disabled-color-dark};
+      --#{$prefix}form-control-disabled-border-color: #{$input-disabled-border-color-dark};
+      --#{$prefix}form-control-disabled-opacity: #{$input-disabled-opacity-dark};
+      --#{$prefix}form-control-focus-bg: #{$input-focus-bg-dark};
+      --#{$prefix}form-control-focus-color: #{$input-focus-color-dark};
+      --#{$prefix}form-control-focus-border-color: #{$input-focus-border-color-dark};
+      --#{$prefix}form-control-placeholder-color: #{$input-placeholder-color-dark};
+    }
+  }
+}
+

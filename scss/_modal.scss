@@ -23,6 +23,7 @@
   --#{$prefix}modal-header-padding-x: #{$modal-header-padding-x};
   --#{$prefix}modal-header-padding-y: #{$modal-header-padding-y};
   --#{$prefix}modal-header-padding: #{$modal-header-padding}; // Todo in v6: Split this padding into x and y
+  --#{$prefix}modal-header-bg: #{$modal-header-bg};
   --#{$prefix}modal-header-border-color: #{$modal-header-border-color};
   --#{$prefix}modal-header-border-width: #{$modal-header-border-width};
   --#{$prefix}modal-title-line-height: #{$modal-title-line-height};
@@ -56,15 +57,7 @@
   margin: var(--#{$prefix}modal-margin);
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
-
-  // When fading in the modal, animate it to slide down
-  .modal.fade & {
-    @include transition($modal-transition);
-    transform: $modal-fade-transform;
-  }
-  .modal.show & {
-    transform: $modal-show-transform;
-  }
+  @include transition($modal-transition);
 
   // When trying to close, animate focus to scale
   .modal.modal-static & {
@@ -107,6 +100,17 @@
   @include box-shadow(var(--#{$prefix}modal-box-shadow));
   // Remove focus outline from opened modal
   outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    @include transition($modal-transition);
+    filter: $modal-fade-filter;
+    transform: $modal-fade-transform;
+  }
+  .modal.show & {
+    filter: $modal-show-filter;
+    transform: $modal-show-transform;
+  }
 }
 
 // Modal background
@@ -115,7 +119,10 @@
   --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
   --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
   --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+  --#{$prefix}backdrop-filter: #{$modal-backdrop-filter};
   // scss-docs-end modal-backdrop-css-vars
+
+  backdrop-filter: var(--#{$prefix}backdrop-filter);
 
   @include overlay-backdrop(var(--#{$prefix}backdrop-zindex), var(--#{$prefix}backdrop-bg), var(--#{$prefix}backdrop-opacity));
 }
@@ -128,6 +135,7 @@
   align-items: center;
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
   padding: var(--#{$prefix}modal-header-padding);
+  background-color: var(--#{$prefix}modal-header-bg);
   border-bottom: var(--#{$prefix}modal-header-border-width) solid var(--#{$prefix}modal-header-border-color);
   @include border-top-radius(var(--#{$prefix}modal-inner-border-radius));
 
@@ -235,3 +243,20 @@
   }
 }
 // scss-docs-end modal-fullscreen-loop
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .modal {
+      --#{$prefix}modal-bg: #{$modal-bg-dark};
+      --#{$prefix}modal-border-color: #{$modal-content-border-color-dark};
+      --#{$prefix}modal-header-bg: #{$modal-header-bg-dark};
+      --#{$prefix}modal-header-border-color: #{$modal-header-border-color-dark};
+      --#{$prefix}modal-footer-bg: #{$modal-footer-bg-dark};
+      --#{$prefix}modal-footer-border-color: #{$modal-footer-border-color-dark};
+    }
+
+    .modal-backdrop {
+      --#{$prefix}backdrop-bg: #{$modal-backdrop-bg-dark};
+    }
+  }
+}

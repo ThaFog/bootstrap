@@ -71,3 +71,16 @@
   padding: var(--#{$prefix}toast-padding-x);
   word-wrap: break-word;
 }
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .toast {
+      --#{$prefix}toast-color: #{$toast-color};
+      --#{$prefix}toast-bg: #{$toast-background-color-dark};
+      --#{$prefix}toast-border-color: #{$toast-border-color-dark};
+      --#{$prefix}toast-header-color: #{$toast-header-color-dark};
+      --#{$prefix}toast-header-bg: #{$toast-header-background-color-dark};
+      --#{$prefix}toast-header-border-color: #{$toast-header-border-color-dark};
+    }
+  }
+}

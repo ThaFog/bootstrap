@@ -41,6 +41,7 @@
   --#{$prefix}dropdown-link-disabled-color: #{$dropdown-link-disabled-color};
   --#{$prefix}dropdown-item-padding-x: #{$dropdown-item-padding-x};
   --#{$prefix}dropdown-item-padding-y: #{$dropdown-item-padding-y};
+  --#{$prefix}dropdown-item-border-radius: #{$dropdown-item-border-radius};
   --#{$prefix}dropdown-header-color: #{$dropdown-header-color};
   --#{$prefix}dropdown-header-padding-x: #{$dropdown-header-padding-x};
   --#{$prefix}dropdown-header-padding-y: #{$dropdown-header-padding-y};
@@ -247,4 +248,15 @@
   --#{$prefix}dropdown-link-disabled-color: #{$dropdown-dark-link-disabled-color};
   --#{$prefix}dropdown-header-color: #{$dropdown-dark-header-color};
   // scss-docs-end dropdown-dark-css-vars
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .dropdown-menu {
+      --#{$prefix}dropdown-bg: #{$dropdown-dark-bg};
+      --#{$prefix}dropdown-border-color: #{$dropdown-dark-border-color};
+      --#{$prefix}dropdown-divider-bg: #{$dropdown-dark-divider-bg};
+      --#{$prefix}dropdown-header-color: #{$dropdown-dark-header-color};
+    }
+  }
 }

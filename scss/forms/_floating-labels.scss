@@ -65,7 +65,7 @@
         z-index: -1;
         height: $form-floating-label-height;
         content: "";
-        background-color: $input-bg;
+        background-color: transparent;
         @include border-radius($input-border-radius);
       }
     }
@@ -89,7 +89,18 @@
     color: $form-floating-label-disabled-color;
 
     &::after {
-      background-color: $input-disabled-bg;
+      background-color: transparent;
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .form-floating {
+      > :disabled ~ label,
+      > .form-control:disabled ~ label {
+        color: $form-floating-label-disabled-color-dark;
+      }
     }
   }
 }
