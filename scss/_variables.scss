@@ -446,7 +446,7 @@ $body-secondary-color:      tint-color($body-color, 40%) !default;
 $body-secondary-bg:         $gray-300 !default;
 
 $body-tertiary-color:       tint-color($body-color, 60%) !default;
-$body-tertiary-bg:          $gray-200 !default;
+$body-tertiary-bg:          mix($gray-50, $gray-300, 50%) !default;
 
 $body-emphasis-color:       $black !default;
 
@@ -1290,7 +1290,7 @@ $dropdown-dark-link-hover-bg:       mix($gray-800, $gray-900, 50%) !default;
 $dropdown-dark-link-active-color:   $dropdown-link-active-color !default;
 $dropdown-dark-link-active-bg:      $dropdown-link-active-bg !default;
 $dropdown-dark-link-disabled-color: $gray-500 !default;
-$dropdown-dark-header-color:        $gray-500 !default;
+$dropdown-dark-header-color:        $gray-400 !default;
 // scss-docs-end dropdown-dark-variables
 
 
