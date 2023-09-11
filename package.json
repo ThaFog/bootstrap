@@ -5,6 +5,9 @@
   "config": {
     "version_short": "5.3"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "css",
     "sass",
